@@ -12,8 +12,8 @@
                   height="400px"
                   ></v-card-media>
                   <v-card-text>
-                      <div class="warning--text"> {{ meetup.date }} - New York</div>
-                      <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur debitis corrupti, mollitia saepe magni sunt ipsum cum odio tempore. Animi eligendi consequatur temporibus maiores veniam, magnam id quibusdam iure ullam.</div>
+                      <div class="warning--text"> {{ meetup.date }} - {{ meetup.location }}</div>
+                      <div>{{ meetup.description }}</div>
                   </v-card-text>
                   <v-card-actions>
                       <v-spacer></v-spacer>
@@ -28,11 +28,11 @@
 
 <script>
 export default {
-    props: ['id'],
-    computed: {
-        meetup() {
-            return this.$store.getters.loadedMeetup(this.id)
-        }
+  props: ["id"],
+  computed: {
+    meetup() {
+      return this.$store.getters.loadedMeetup(this.id);
     }
-}
+  }
+};
 </script>

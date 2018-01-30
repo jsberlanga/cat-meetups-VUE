@@ -11,21 +11,27 @@ export const store = new Vuex.Store({
           "https://static.pexels.com/photos/669015/pexels-photo-669015.jpeg",
         id: "hardcodedId_1",
         title: "Meetup in Cat York",
-        date: "2018-01-27"
+        date: "2018-01-27",
+        location: "Cat York",
+        description: "It's Cat York!"
       },
       {
         imageUrl:
           "https://static.pexels.com/photos/46024/pexels-photo-46024.jpeg",
         id: "hardcodedId_2",
         title: "Meetup in Cat Land",
-        date: "2018-01-28"
+        date: "2018-01-28",
+        location: "Cat Land",
+        description: "It's Cat Land!"
       },
       {
         imageUrl:
           "https://static.pexels.com/photos/248280/pexels-photo-248280.jpeg",
         id: "hardcodedId_3",
         title: "Meetup in Cat Carpet",
-        date: "2018-01-26"
+        date: "2018-01-26",
+        location: "Cat Carpet",
+        description: "It's Cat Carpet!"
       }
     ],
     user: {
