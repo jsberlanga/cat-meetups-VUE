@@ -6,7 +6,7 @@
         <v-btn large router to="/meetups" class="secondary">Explore Meetups</v-btn>
       </v-flex>
       <v-flex xs12 sm6 class="text-xs-center text-sm-left">
-        <v-btn large router to="/meetups" class="secondary">Organize Meetup</v-btn>
+        <v-btn large router to="/meetup/new" class="secondary">Organize Meetup</v-btn>
       </v-flex>
     </v-layout>
     <v-layout row wrap>
@@ -32,26 +32,26 @@
 
 <script>
 export default {
- computed: {
-   meetups (){
-     return this.$store.getters.featuredMeetups
-   }
- },
+  computed: {
+    meetups() {
+      return this.$store.getters.featuredMeetups;
+    }
+  },
   methods: {
     onLoadMeetup(id) {
-      this.$router.push('/meetups/' + id)
+      this.$router.push("/meetups/" + id);
     }
-  } 
-}
+  }
+};
 </script>
 
 <style scoped>
-  .title {
-    position: absolute;
-    bottom: 50px;
-    background-color: rgba(0,0,0,0.5);
-    color: #fff;
-    font-size: 2em;
-    padding: 10px;
-  }
+.title {
+  position: absolute;
+  bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 2em;
+  padding: 10px;
+}
 </style>
