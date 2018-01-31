@@ -123,7 +123,7 @@ export default {
       }
       const meetupData = {
         title: this.title,
-        locaiton: this.location,
+        location: this.location,
         imageUrl: this.imageUrl,
         description: this.description,
         date: this.submittableDateTime

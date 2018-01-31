@@ -42,5 +42,7 @@ new Vue({
       projectId: "vue-vuetify",
       storageBucket: "vue-vuetify.appspot.com"
     });
+
+    this.$store.dispatch('loadMeetups')
   }
 });
