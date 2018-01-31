@@ -41,24 +41,39 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      sideNav: false,
-      menuItems: [
-        {icon: 'camera_front', title: 'View Meetups', link:'/'},
-        {icon: 'room', title: 'Organize Meetup', link:'/meetup/new'},
-        {icon: 'person', title: 'Profile', link:'/profile'},
-        {icon: 'face', title: 'Sign up', link:'/signup'},
-        {icon: 'lock_open', title: 'Sign in', link:'/signin'}
-      ]
+      sideNav: false
+    };
+  },
+  computed: {
+    menuItems() {
+      let menuItems = [
+        { icon: "face", title: "Sign up", link: "/signup" },
+        { icon: "lock_open", title: "Sign in", link: "/signin" }
+      ];
+      if (this.userIsAuthenticated) {
+        menuItems = [
+          { icon: "camera_front", title: "View Meetups", link: "/" },
+          { icon: "room", title: "Organize Meetup", link: "/meetup/new" },
+          { icon: "person", title: "Profile", link: "/profile" }
+        ];
+      }
+      return menuItems;
+    },
+    userIsAuthenticated() {
+      return (
+        this.$store.getters.user !== null &&
+        this.$store.getters.user !== undefined
+      );
     }
   },
-  name: 'App'
-}
+  name: "App"
+};
 </script>
 
 <style>
-  * {
-    font-family: 'Roboto Mono', monospace;
-  }
+* {
+  font-family: "Roboto Mono", monospace;
+}
 </style>

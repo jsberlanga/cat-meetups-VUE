@@ -16,7 +16,7 @@
                 <v-card-title primary-title>
                   <div>
                     <div class="white--text mb-1"><h2>{{ meetup.title }}</h2></div>
-                    <div>{{ meetup.date }}</div>
+                    <div>{{ meetup.date | date }}</div>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -38,9 +38,9 @@
 <script>
 export default {
   computed: {
-    meetups () {
-      return this.$store.getters.loadedMeetups
+    meetups() {
+      return this.$store.getters.loadedMeetups;
     }
   }
-}
+};
 </script>
