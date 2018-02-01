@@ -9,6 +9,7 @@ import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import DateFilter from "./filters/date";
 import AlertCmp from "./components/Shared/Alert.vue";
+import EditMeetupDetailsDialog from './components/Meetup/Edit/EditMeetupDetailsDialog.vue'
 
 Vue.use(Vuetify, {
   theme: {
@@ -26,6 +27,7 @@ Vue.config.productionTip = false;
 
 Vue.filter("date", DateFilter);
 Vue.component("app-alert", AlertCmp);
+Vue.component("app-edit-meetup-details-dialog", EditMeetupDetailsDialog)
 
 /* eslint-disable no-new */
 new Vue({
@@ -40,7 +42,7 @@ new Vue({
       authDomain: "vue-vuetify.firebaseapp.com",
       databaseURL: "https://vue-vuetify.firebaseio.com",
       projectId: "vue-vuetify",
-      storageBucket: "vue-vuetify.appspot.com"
+      storageBucket: "gs://vue-vuetify.appspot.com/" 
     });
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
