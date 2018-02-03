@@ -17,13 +17,14 @@ import RegisterDialog from './components/Meetup/Registration/RegisterDialog.vue'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: "#d12e4e",
-    secondary: "#424242",
-    accent: "#82B1FF",
+    primary: "#262216",
+    secondary: "#49412c",
+    accent: "#97743a",
     error: "#FF5252",
     info: "#2196F3",
     success: "#4CAF50",
-    warning: "#FFC107"
+    warning: "#FFC107",
+    background: "#b0a18e"
   }
 });
 
@@ -55,6 +56,7 @@ new Vue({
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       this.$store.dispatch('autoSignIn', user)
+      this.$store.dispatch('fetchUserData')
     }
   })
     this.$store.dispatch('loadMeetups')

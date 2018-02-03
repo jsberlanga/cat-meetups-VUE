@@ -24,12 +24,12 @@
     <v-toolbar dark class="primary">
       <v-toolbar-side-icon
         @click.stop="sideNav = !sideNav"
-        class="hidden-sm-and-up "></v-toolbar-side-icon>
+        class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">DevMeetup</router-link>
+        <router-link to="/" tag="span" style="cursor: pointer" class="whatever">CatMeetups</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only">
+      <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
           flat
           v-for="item in menuItems"
@@ -53,6 +53,11 @@
    <main>
      <router-view></router-view>
    </main>
+
+   <v-footer class="white--text pa-1" color="secondary">
+    <v-spacer></v-spacer>
+    <div>Copyright © {{ new Date().getFullYear() }} CatMeetups</div>
+  </v-footer>
   </v-app>
 </template>
 
@@ -98,4 +103,20 @@ export default {
 * {
   font-family: "Fira Sans";
 }
+
+.application.theme--light {
+  background-color: #b0a18e;
+background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+}
+
+.application .theme--light.card, .theme--light .card {
+  background: #b0a18e
+}
+
+@media (max-width:600px) {
+  .whatever {
+  display: none
+  }
+}
+
 </style>

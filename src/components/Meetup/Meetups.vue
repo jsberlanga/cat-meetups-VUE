@@ -3,7 +3,7 @@
   <v-container>
     <v-layout row-wrap v-for="meetup in meetups" :key="meetup.id" class="mb-2">
       <v-flex xs12 sm10 md8 offset-xs0 offset-sm1 offset-md2>
-        <v-card color="pink accent-1">
+        <v-card color="accent">
           <v-container fluid>
             <v-layout row>
               <v-flex xs5 sm4 md3>
