@@ -96,6 +96,6 @@ export default {
 
 <style>
 * {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Fira Sans";
 }
 </style>

@@ -27,11 +27,9 @@
                   ></v-card-media>
                   <v-card-text>
                       <div class="warning--text"> {{ meetup.date | date  }} - {{ meetup.location }}</div>
-                      <div>
+                      <div class="mb-2">
                       <app-edit-meetup-date-dialog :meetup="meetup"
                       v-if="userIsCreator"></app-edit-meetup-date-dialog>
-                      </div>
-                      <div>
                       <app-edit-meetup-time-dialog
                       :meetup="meetup" v-if="userIsCreator"></app-edit-meetup-time-dialog>
                       </div>
@@ -39,7 +37,7 @@
                   </v-card-text>
                   <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn class="primary">Register</v-btn>
+                      <app-meetup-register-dialog :meetupId="meetup.id"></app-meetup-register-dialog>
                   </v-card-actions>
               </v-card>
           </v-flex>
